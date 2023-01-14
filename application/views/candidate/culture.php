@@ -2,7 +2,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5eG5oC5cOUcQ3qPkjPE7vlmnrTOmI05A&sensor=false&libraries=places"></script>
 <!-- Begin page -->
 <div id="layout-wrapper">
-       <?php include 'includes/normal-header.php' ?>
+    <?php include 'includes/normal-header.php' ?>
     <div class="">
 
         <div class="page-content">
@@ -55,18 +55,15 @@
 
                                 <div class="card-body">
                                     <div class="tab-content twitter-bs-wizard-tab-content ">
-
-
-
-
                                         <div class="tab-pane active" id="Culture">
                                             <div class="text-center mb-4">
+                                                <h4 class="mb-sm-0 font-size-18"></h4>
                                                 <h1>Find your culture fit</h1>
                                                 <p class="card-title-desc">Tell us about your interests and preferences and we'll find you the perfect startup jobs.</p>
                                             </div>
                                             <form method="post">
 
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-7">
                                                     <div class="mb-3">
                                                         <label for="basicpill-phoneno-input" class="form-label"> Which technologies are you most interested in working with?</label>
                                                         <select class="form-control" name="technologies_used[]" data-trigger id="choices-multiple-remove-button" placeholder="This is a search placeholder" multiple>
@@ -86,31 +83,9 @@
                                                 </div>
 
 
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-phoneno-input" class="form-label">What motivates you more?</label>
-                                                        <br>
-                                                        <input type="radio" id="html" name="motivates_you" value="Building products">
-                                                        <label class="f-14" for="html">Building products</label> &nbsp; &nbsp;
-                                                        <input type="radio" id="css" name="motivates_you" value="Solving technical problems" checked>
-                                                        <label class="f-14" for="css">Solving technical problems</label><br>
-                                                    </div>
-                                                </div>
 
 
-                                                <div class="col-lg-6">
-                                                    <div class="mb-3">
-                                                        <label for="basicpill-phoneno-input" class="form-label">Over the next five years, what career track do you want to follow?</label>
-                                                        <br>
-                                                        <input type="radio" id="html" name="career_track" value="Individual contributor">
-                                                        <label class="f-14" for="html">Individual contributor</label> &nbsp; &nbsp;
-                                                        <input type="radio" id="css" name="career_track" value="Manager">
-                                                        <label class="f-14" for="css">Manager</label><br>
-                                                    </div>
-                                                </div>
-
-
-
+                                                <!-- 
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label for="basicpill-phoneno-input" class="form-label">What environment do you work better in?</label>
@@ -120,44 +95,11 @@
                                                         <input type="radio" id="css" name="work_environment" value="Employees wear a lot of hats. Assignments often require employees to' figure it out' on their own.">
                                                         <label class="f-14" for="css">Employees wear a lot of hats. Assignments often require employees to "figure it out" on their own.</label><br>
                                                     </div>
-                                                </div>
+                                                </div> -->
 
 
                                                 <div class="col-lg-12">
-                                                    <!--<div class="mb-3">-->
-                                                    <!--    <label for="basicpill-phoneno-input" class="form-label">What's most important to you in your next job? </label>-->
-                                                    <!--    <br>-->
-                                                    <!--    <input type="radio" id="html" name="important_next_job" value="Having a say in what I work on and how I work">-->
-                                                    <!--    <label class="f-14" for="html">Having a say in what I work on and how I work</label>-->
-                                                    <!--    &nbsp; &nbsp;-->
-                                                    <!--    <input type="radio" id="css" name="important_next_job" value="Opportunities to progress within the company">-->
-                                                    <!--    <label class="f-14" for="css">Opportunities to progress within the company</label>-->
-                                                    <!--    <br>-->
 
-                                                    <!--    <input type="radio" id="css" name="important_next_job" value="Team members I can learn from">-->
-                                                    <!--    <label class="f-14" for="css">Team members I can learn from</label>-->
-                                                    <!--    &nbsp; &nbsp;-->
-                                                    <!--    <input type="radio" id="css" name="important_next_job" value="A company with a good growth trajectory">-->
-                                                    <!--    <label class="f-14" for="css">A company with a good growth trajectory</label>-->
-                                                    <!--    <br>-->
-
-                                                    <!--    <input type="radio" id="css" name="important_next_job" value="Having a say in the company's and/or my team's direction">-->
-                                                    <!--    <label class="f-14" for="css">Having a say in the company's and/or my team's direction</label>-->
-                                                    <!--    &nbsp; &nbsp;-->
-                                                    <!--    <input type="radio" id="css" name="important_next_job" value="Mentorship opportunities">-->
-                                                    <!--    <label class="f-14" for="css">Mentorship opportunities</label>-->
-                                                    <!--    <br>-->
-
-                                                    <!--    <input type="radio" id="css" name="important_next_job" value="Learn new things and develop my skills">-->
-                                                    <!--    <label class="f-14" for="css">Learn new things and develop my skills</label>-->
-                                                    <!--    &nbsp; &nbsp;-->
-
-                                                    <!--    <input type="radio" id="css" name="important_next_job" value="Challenging problems to work on">-->
-                                                    <!--    <label class="f-14" for="css">Challenging problems to work on</label>-->
-                                                    <!--    &nbsp; &nbsp;-->
-                                                    <!--    <input type="radio" id="css" name="important_next_job" value="A diverse team">-->
-                                                    <!--    <label class="f-14" for="css">A diverse team</label>-->
-                                                    <!--</div>-->
                                                     <div class="mb-3">
 
                                                         <label for="basicpill-phoneno-input" class="form-label">What's
@@ -172,7 +114,7 @@
                                                                 <div class="list_items">
 
 
-                                                                    <input type="radio" id="html" name="important_next_job" value="Having a say in what I work on and how I work" >
+                                                                    <input type="radio" id="html" name="important_next_job" value="Having a say in what I work on and how I work">
 
 
                                                                     <label for="html">Having a say in what I work on and how I
@@ -183,7 +125,7 @@
 
                                                                 <div class="list_items">
 
-                                                                    <input type="radio" id="css" name="important_next_job" value="Opportunities to progress within the company" >
+                                                                    <input type="radio" id="css" name="important_next_job" value="Opportunities to progress within the company">
                                                                     <label for="css">Opportunities to progress within the
                                                                         company</label>
 
@@ -192,7 +134,7 @@
 
                                                                 <div class="list_items">
 
-                                                                    <input type="radio" id="css" name="important_next_job" value="Team members I can learn from" >
+                                                                    <input type="radio" id="css" name="important_next_job" value="Team members I can learn from">
                                                                     <label for="css">Team members I can learn from</label>
 
                                                                 </div>
@@ -200,36 +142,36 @@
 
                                                                 <div class="list_items">
 
-                                                                    <input type="radio" id="css" name="important_next_job" value="A company with a good growth trajectory" >
+                                                                    <input type="radio" id="css" name="important_next_job" value="A company with a good growth trajectory">
                                                                     <label for="css">A company with a good growth trajectory</label>
 
                                                                 </div>
 
                                                                 <div class="list_items">
 
-                                                                    <input type="radio" id="css" name="important_next_job" value="Having a say in the company's and/or my team's direction" >
+                                                                    <input type="radio" id="css" name="important_next_job" value="Having a say in the company's and/or my team's direction">
                                                                     <label for="css">Having a say in the company's and/or my team's direction</label>
                                                                 </div>
 
                                                                 <div class="list_items">
-                                                                    <input type="radio" id="css" name="important_next_job" value="Mentorship opportunities" >
+                                                                    <input type="radio" id="css" name="important_next_job" value="Mentorship opportunities">
                                                                     <label for="css">Mentorship opportunities</label>
                                                                 </div>
 
 
                                                                 <div class="list_items">
-                                                                    <input type="radio" id="css" name="important_next_job" value="Learn new things and develop my skills" >
+                                                                    <input type="radio" id="css" name="important_next_job" value="Learn new things and develop my skills">
                                                                     <label for="css">Learn new things and develop my skills</label>
                                                                 </div>
 
                                                                 <div class="list_items">
 
-                                                                    <input type="radio" id="css" name="important_next_job" value="Challenging problems to work on" >
+                                                                    <input type="radio" id="css" name="important_next_job" value="Challenging problems to work on">
                                                                     <label for="css">Challenging problems to work on</label>
                                                                 </div>
 
                                                                 <div class="list_items">
-                                                                    <input type="radio" id="css" name="important_next_job" value="A diverse team" >
+                                                                    <input type="radio" id="css" name="important_next_job" value="A diverse team">
                                                                     <label for="css">A diverse team</label>
                                                                 </div>
 
@@ -252,7 +194,7 @@
                                                     </div>
                                                 </div>
 
-                                                
+
                                                 <button type="submit" class="btn btn-primary btn-lg">Save & Continue</button>
                                             </form>
                                             <p class="text-success">

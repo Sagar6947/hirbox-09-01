@@ -385,7 +385,8 @@ function resumeUpload($imageName, $path)
 		$configi['source_image'] = $path;
 		$configi['new_image'] = $target_path;
 		$configi['maintain_ratio'] = TRUE;
-
+		$configi['width'] = '500';
+		$configi['height'] = '500';
 		$ci->load->library('image_lib');
 		$ci->image_lib->initialize($configi);
 		$ci->image_lib->resize();

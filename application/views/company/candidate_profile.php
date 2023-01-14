@@ -1,33 +1,18 @@
 <!doctype html>
 <html lang="en">
 
-
 <head>
-
     <meta charset="utf-8" />
     <title><?= $title ?></title>
-
     <?php include 'includes/headerlink.php'; ?>
-
 </head>
 
 <body data-topbar="dark">
 
-    <!-- <body data-layout="horizontal"> -->
-
-    <!-- Begin page -->
     <div id="layout-wrapper">
 
 
         <?php include 'includes/header.php'; ?>
-
-
-
-
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content">
 
             <div class="page-content">
@@ -49,7 +34,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
 
                     <div class="row">
                         <div class="col-lg-12 bg-white pb-4">
@@ -221,9 +205,9 @@
 
                                                         <?php
                                                         $get_skills = json_decode($get_candidate[0]['technologies_used']);
-                                                        // print_r($get_skills);
+
                                                         $tech = getAllRow('tbl_technologies');
-                                                        // print_r($t   ech);
+
                                                         ?>
 
                                                         <li class="overview_col">
@@ -272,29 +256,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- end row -->
-
                         </div>
-                    </div> <!-- end row -->
-
-
-                </div> <!-- container-fluid -->
+                    </div>
+                </div>
             </div>
-            <!-- End Page-content -->
+
 
 
             <?php include 'includes/footer.php'; ?>
 
         </div>
-        <!-- end main content-->
-
     </div>
-    <!-- END layout-wrapper -->
 
-
-
-
-    <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
     <?php include 'includes/footerlink.php'; ?>

@@ -5,7 +5,7 @@
             <div class="navbar-brand-box">
                 <a href="<?= base_url('Admin_dashboard') ?>" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="<?= base_url() ?>assets/images/logo.png" alt="Hirbox" width="150px">
+                        <img src="<?= base_url() ?>assets/images/hb-fav.png" alt="" height="30">
                     </span>
                     <span class="logo-lg">
                         <img src="<?= base_url() ?>assets/images/logo.png" alt="Hirbox" width="150px">
@@ -14,7 +14,7 @@
 
                 <a href="<?= base_url('Admin_dashboard') ?>" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="<?= base_url() ?>assets/images/logo.png" alt="Hirbox" width="150px">
+                        <img src="<?= base_url() ?>assets/images/hb-fav.png" alt="" height="30">
                     </span>
                     <span class="logo-lg">
                         <img src="<?= base_url() ?>assets/images/logo.png" alt="Hirbox" width="150px">
@@ -57,9 +57,6 @@
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <!-- item-->
-
-                    <!-- <a class="dropdown-item" href="<?= base_url() ?>auth-lock-screen.html"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock screen</a> -->
 
                     <a class="dropdown-item" href="<?= base_url('company-logout') ?>"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
                 </div>
@@ -68,7 +65,6 @@
         </div>
     </div>
 </header>
-<!-- ========== Left Sidebar Start ========== -->
 <div class="vertical-menu">
 
     <div data-simplebar class="h-100">
@@ -88,7 +84,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="layers"></i>
+                        <i data-feather="globe"></i>
                         <span data-key="t-ecommerce">Companies</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -96,26 +92,11 @@
                         <li><a href="<?= base_url('Admin_Dashboard/job_list') ?>" data-key="t-product-detail">Job Lists</a></li>
                     </ul>
                 </li>
-                <!-- <li>
-                    <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="layers"></i>
-                        <span data-key="t-ecommerce">Recruiters</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#" key="t-products">Recruiter Details</a></li>
-                        <li><a href="#" data-key="t-product-detail">Job Details</a></li>
-                        <li><a href="#" data-key="t-orders">Job Detial</a></li>
-                        <li><a href="#" data-key="t-customers">Assign teams</a></li>
-                        <li><a href="#" data-key="t-cart">Candidates Mapped</a></li>
-                        <li><a href="#" data-key="t-checkout">Checkout</a></li>
-                        <li><a href="#" data-key="t-shops">Shops</a></li>
-                        <li><a href="#" data-key="t-add-product">Add Product</a></li>
-                    </ul>
-                </li> -->
+
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="layers"></i>
+                        <i data-feather="user-plus"></i>
                         <span data-key="t-ecommerce">Candidate</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
@@ -129,30 +110,30 @@
                 <li class="menu-title">Website Data</li>
                 <li>
                     <a href="<?= base_url('Admin_Dashboard/contact_detail') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="phone-outgoing"></i>
                         <span>Contact Details</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?= base_url('Admin_Dashboard/social_links') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="share-2"></i>
                         <span>Social Links</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?= base_url('Admin_Dashboard/privacy_policy') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="file-text"></i>
 
                         <span>Privacy Policy</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?= base_url('Admin_Dashboard/term_condition') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="file-text"></i>
                         <span>Terms & Conditions</span>
                     </a>
                 </li>
-               
+
             </ul>
 
 
@@ -160,13 +141,13 @@
                 <li class="menu-title">Other Information</li>
                 <li>
                     <a href="<?= base_url('Admin_Dashboard/job_roles') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="award"></i>
                         <span>Job Roles</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?= base_url('Admin_Dashboard/work_technologies') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="bar-chart"></i>
                         <span>Work Technologies</span>
                     </a>
                 </li>

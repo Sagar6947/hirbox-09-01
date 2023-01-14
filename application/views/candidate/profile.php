@@ -61,7 +61,20 @@
                                             </div>
                                             <form method="post">
                                                 <div class="">
-                                                     <div class="row">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label for="basicpill-firstname-input" class="form-label">Date of Birth</label>
+                                                                <input type="date" name="dob" class="form-control txtPlaces">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                            <label for="basicpill-firstname-input" class="form-label">Profile Image</label>
+                                                                <input type="file" class="form-control" name="image" accept=".png, .jpg, .jpeg">
+                                                            </div>
+                                                        </div>
 
                                                         <div class="col-lg-6">
                                                             <label for="basicpill-firstname-input" class="form-label">
@@ -84,7 +97,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class="col-lg-6">
                                                         <div class="mb-3">
                                                             <label for="basicpill-lastname-input" class="form-label">* What is your current role?</label>
@@ -105,7 +118,7 @@
                                                         </div>
                                                     </div>
 
-                                                   
+
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <label for="basicpill-lastname-input" class="form-label">
@@ -119,7 +132,7 @@
                                                                     for ($i = 1; $i <= 9; $i++) {
 
                                                                     ?>
-                                                                        <option value="<?= $i ?>" >
+                                                                        <option value="<?= $i ?>">
                                                                             <?= $i ?> Year<?= (($i == 1) ? '' : 's') ?>
                                                                         </option>
                                                                     <?php
@@ -144,7 +157,7 @@
                                                                     for ($i = 1; $i <= 11; $i++) {
 
                                                                     ?>
-                                                                        <option value="<?= $i ?>" >
+                                                                        <option value="<?= $i ?>">
                                                                             <?= $i ?> Month<?= (($i == 1) ? '' : 's') ?>
                                                                         </option>
                                                                     <?php
@@ -156,53 +169,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-                                                    <div class="col-lg-6">
-                                                        <div class="mb-3">
-                                                            <label for="basicpill-phoneno-input" class="form-label">* Are you a student or new grad?</label>
-                                                            <br>
-                                                            <input type="radio" id="html" name="are_you_student" value="0">
-                                                            <label for="html">Yes</label> &nbsp; &nbsp;
-                                                            <input type="radio" id="css" name="are_you_student" value="1" checked>
-                                                            <label for="css">No</label><br>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="row">
-
-                                                        <div class="col-lg-4">
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-email-input" class="form-label">* Job title</label>
-                                                                <input type="text" name="job_title" class="form-control" id="basicpill-email-input" placeholder="e.g. : Design Director ">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-4">
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-email-input" class="form-label">* Company</label>
-                                                                <input type="text" name="job_company" class="form-control" id="basicpill-email-input" placeholder="e.g. : Omnicorp ">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-4">
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-email-input" class="form-label"></label>
-                                                                <br>
-                                                                <input type="checkbox" id="vehicle1" name="not_employeed" value="1">
-                                                                <label for="vehicle1"> I'm not currently employed</label><br>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    
                                                 </div>
-
-
-                                               
-
                                                 <button type="submit" class="btn btn-primary btn-lg"> Create Your Profile</button>
 
                                             </form>
@@ -237,16 +204,3 @@
 </body>
 
 </html>
-
-<script>
-    google.maps.event.addDomListener(window, 'load', function() {
-        var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
-        google.maps.event.addListener(places, 'place_changed', function() {
-            var place = places.getPlace();
-            var address = place.formatted_address;
-            var latitude = place.geometry.location.lat();
-            var longitude = place.geometry.location.lng();
-
-        });
-    });
-</script>

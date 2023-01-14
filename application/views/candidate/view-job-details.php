@@ -25,19 +25,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- end page title -->
 
                 <?php
                 $company_info = getRowById('tbl_company_registration', 'company_id', $job_detail[0]['company_id']);
                 ?>
-
-                <?php
-                if ($this->session->has_userdata('msg')) {
-                    echo $this->session->userdata('msg');
-                    $this->session->unset_userdata('msg');
-                }
-                ?>
-
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card">
@@ -104,19 +95,7 @@
 
                                         <?= $job_detail[0]['job_description'] ?>
 
-                                        <li>We are Looking For a PHP Doveloper, who is must be familiar with the PHP fundamentals& PHP framwork. Experience with Laravel & mixs, Livewire
 
-                                            Good knowledge of SQL and related databases, with a preference for those with MySQL experience.</li>
-
-                                        <li>Excellent knowledge of the basic PHP 7 or web server exploits along with their solutions.</li>
-
-                                        <li>Experience building or maintaining a CMS.</li>
-
-                                        <li>Knowledge of MVC frameworks.</li>
-
-                                        <li>A detailed understanding of database design and administration.</li>
-
-                                        <li>The ability to integrate a variety of data sources and databases into a single system.</li>
                                     </div>
 
                                     <div class="row mb-3 border-bottom">
@@ -194,111 +173,15 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end row -->
 
                     </div>
                 </div>
-                <!-- end row -->
-
             </div> <!-- container-fluid -->
         </div>
-        <!-- End Page-content -->
-
-
-
-    </div>
-    <!-- end main content-->
-</div>
-<!-- END layout-wrapper -->
-
-
-
-
-<!--=========Social Media Modal Starts==========-->
-
-<!--=========Apply Modal starts===========-->
-
-<div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-
-                    <h5 class="modal-title" id="exampleModalLabel">Your Application</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-                </div>
-                <div class="modal-body">
-                    <form method="POST" action="">
-                        <div class="mb-3 row  align-items-center">
-                            <div class="col-md-8">
-                                <label for="recipient-name" class="col-form-label"><b><?= $user_candidate[0]['name'] ?></b></label>
-                                <p><?= (($user_candidate[0]['not_employeed'] == '1') ? "Not Employeed" :  ucfirst($user_candidate[0]['job_title']) . ' @ ' . ucfirst($user_candidate[0]['job_company'])) ?></p>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#">Update Profile</a>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label"><b>Your hiring contact is <?= $job_detail[0]['hr_name'] ?></b></label>
-                            <p class="font_small">Let them know why you are a good for this role</p>
-                            <textarea class="form-control" name="hr_note" id="message-text" placeholder="Write a note to <?= $job_detail[0]['hr_name']  ?>  at <?= $company_info[0]['company_name'] ?>"></textarea>
-                        </div>
-
-                        <div class="modal-footer">
-                            <!--<button type="button" class="modal_cancel_btn" data-bs-dismiss="modal">Cancel</button>-->
-                            <input type="submit" class="btn btn-primary" value="Send application">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
-<!--=========Apply Modal ends===========-->
-
-
-
-<div>
-    <!-- Small modal button -->
-
-    <!--  Small modal example -->
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mySmallModalLabel">Share On</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="share_icons">
-                        <a href="#" class="share_icon_box">
-                            <p>Share On Whatsapp</p>
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="share_icon_box">
-                            <p>Share On Facebook</p>
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="share_icon_box">
-                            <p>Share On Twitter</p>
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-</div>
-<!--=========Social Media Modal Ends==========-->
-
-
-
-<!-- Right bar overlay-->
 <div class="rightbar-overlay"></div>
-
-<!-- JAVASCRIPT -->
 <?php include 'includes/footer-link.php'; ?>
 
 </body>

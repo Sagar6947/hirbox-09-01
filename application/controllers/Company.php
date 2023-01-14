@@ -48,8 +48,8 @@ class Company extends CI_Controller
         if (count($_POST) > 0) {
             extract($this->input->post());
             $table = "company_registration";
-            $login_data = $this->CommonModal->getRowByMoreId($table, array('number' => $number));
-            $get_member = $this->CommonModal->getRowByMoreId('tbl_company_members', array('number' => $number));
+            $login_data = $this->CommonModal->getRowByMoreId($table, array('email' => $email));
+            $get_member = $this->CommonModal->getRowByMoreId('tbl_company_members', array('email' => $email));
             $get_company = $this->CommonModal->getRowByMoreId('company_registration', array('company_id' => $get_member[0]['company_id']));
 
 
@@ -196,6 +196,21 @@ class Company extends CI_Controller
         $data['title'] = "Job Posting Report | Hirbox";
         $this->load->view('company/view-post-job', $data);
     }
+
+    public function view_job_details($jdid, $title)
+    {
+
+        $job_id = $jdid;
+        $data['job_detail'] = $this->CommonModal->getRowById('tbl_job_post', 'job_id', $job_id);
+
+        $data['title'] = "Candidate Job List | Hirbox";
+        $this->load->view('candidate/view-job-details', $data);
+    }
+
+
+
+
+
 
     public function apply_candidate_report()
     {
