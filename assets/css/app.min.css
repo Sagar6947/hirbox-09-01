@@ -6953,3 +6953,72 @@ body[data-layout-mode=dark] .pricing-table-bg {
     box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
 
 }
+
+.recruiter_menu{
+    background: #161616;
+    padding-top: 30px !important;
+}
+
+.recruiter_menu #sidebar-menu ul li a {
+    color: #e0e0e0;
+}
+
+.profile_name{
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.profile_type_title{
+    position: absolute;
+    bottom: 11px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+}
+
+.number_code{
+    display: flex;
+    align-items: flex-start;
+}
+
+.number_code .choices{
+    width: 350px;
+}
+.number_code .choices .choices__inner{
+    padding-top: 3.2px;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+    background: dadadae6 !important;
+}
+
+.number_code .choices .choices__list--dropdown{
+    width: 150% !important;
+}
+
+.number_code .mobile_number{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-left: none !important;
+}
+
+.choices__placeholder{
+    opacity: 1 !important;
+}
+
+.choices__list--dropdown .choices__item{
+    font-size: 14px !important;
+}
+
+.checkbox_container{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 70%;
+    gap: 14px;
+}
+
+.checkbox_container label,
+.checkbox_container input{
+    font-size: 14px;
+}

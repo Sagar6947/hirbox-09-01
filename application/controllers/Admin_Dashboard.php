@@ -60,6 +60,12 @@ class Admin_Dashboard extends CI_Controller
         redirect($_SERVER["HTTP_REFERER"]);
     }
 
+    public function job_status($job_id, $status)
+    {
+        $update = $this->CommonModal->updateRowById('tbl_job_post', 'job_id', $job_id, array('status' => $status));
+        redirect($_SERVER["HTTP_REFERER"]);
+    }
+
     public function delete_candidate()
     {
         $BdID = $this->input->get('BdID');

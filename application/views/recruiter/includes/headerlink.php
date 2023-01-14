@@ -22,7 +22,13 @@
         <!-- App Css-->
         <link href="<?= base_url() ?>assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-        
+        <link href="<?= base_url() ?>assets/candidate/libs/choices.js/public/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- color picker css -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/candidate/libs/%40simonwep/pickr/themes/classic.min.css" /> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/candidate/libs/%40simonwep/pickr/themes/monolith.min.css" /> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/candidate/libs/%40simonwep/pickr/themes/nano.min.css" /> <!-- 'nano' theme -->
+
 
 
 

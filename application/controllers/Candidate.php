@@ -281,16 +281,16 @@ class Candidate extends CI_Controller
         $this->load->view('candidate/view-job-details', $data);
     }
 
-    public function add_save_job($candidate_id, $job_id)
+    public function add_save_job($candidate_id, $job_id, $panel)
     {
         if (!$this->session->has_userdata('candidate_id')) {
             redirect(base_url('candidate/login'));
         }
-        $datarow = $this->CommonModal->getRowByMoreId('tbl_saved_job', array('candidate_id' => $candidate_id, 'job_id' => $job_id));
+        $datarow = $this->CommonModal->getRowByMoreId('tbl_saved_job', array('candidate_id' => $candidate_id, 'job_id' => $job_id, 'panel' => $panel));
         if ($datarow != '') {
-            $insert = $this->CommonModal->runQuery("DELETE FROM `tbl_saved_job` WHERE job_id = $job_id AND candidate_id = $candidate_id");
+            $insert = $this->CommonModal->runQuery("DELETE FROM `tbl_saved_job` WHERE job_id = $job_id AND candidate_id = $candidate_id AND panel = $panel");
         } else {
-            $insert = $this->CommonModal->insertRowReturnId('tbl_saved_job',  array('candidate_id' => $candidate_id, 'job_id' => $job_id));
+            $insert = $this->CommonModal->insertRowReturnId('tbl_saved_job',  array('candidate_id' => $candidate_id, 'job_id' => $job_id, 'panel' => $panel));
         }
         // redirect(base_url() . 'candidate/view_jobs'); 
         redirect($_SERVER["HTTP_REFERER"]);

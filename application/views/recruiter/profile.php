@@ -136,178 +136,138 @@
                                     <h4 class="card-title">Basic Details</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="POST">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="mb-3">
                                                     <label for="title">Name</label>
-                                                    <input id="productname" name="title" type="text" class="form-control" placeholder="Name" value="Anu Thakur">
+                                                    <input id="productname" name="recruiter_name" type="text" class="form-control" value="<?= $recruiter[0]['recruiter_name'] ?>">
                                                 </div>
-                                                <!-- <div class="mb-3">
-                                                    <label for="title">Contact Person First Name</label>
-                                                    <input id="productname" name="title" type="text" class="form-control" placeholder="COntact Person First Name" value="Rahul">
-                                                </div> -->
-
-                                                <div class="mb-3">
-                                                    <label class="control-label">Country of Residence</label>
-                                                    <select class="form-control select2 form-select">
-                                                        <option>Select Country of Residence</option>
-                                                        <option value="" selected>India</option>
-                                                        <option value="">US</option>
+                                                <label class="control-label">Phone No</label>
+                                                <div class="mb-3 number_code">
+                                                    <select class="form-control" name="country_code" data-trigger id="choices-single-default">
+                                                        <?php
+                                                        if (!empty($country_code)) {
+                                                            foreach ($country_code as $crow) {
+                                                        ?>
+                                                                <option value="<?= $crow['phonecode'] ?>" <?= ($crow) ?>><?= $crow['name'] ?> &nbsp; (+<?= $crow['phonecode'] ?>) </option>
+                                                        <?php
+                                                            }
+                                                        }
+                                                        ?>
                                                     </select>
+                                                    <input id="price" name="number" type="text" class="form-control mobile_number" placeholder="" value="<?= $recruiter[0]['number'] ?>">
                                                 </div>
-
                                             </div>
 
                                             <div class="col-sm-6">
                                                 <div class="mb-3">
-                                                    <label for="productdesc">Email Id</label>
-                                                    <input id="price" type="text" class="form-control" placeholder="Email" value="anu@gmail.com">
+                                                    <label for="productdesc">Company Name</label>
+                                                    <input id="price" type="text" class="form-control" name="company_name" placeholder="" value="<?= $recruiter[0]['company_name'] ?>">
                                                 </div>
-
                                                 <div class="mb-3">
-                                                    <label class="control-label">Phone No</label>
-                                                    <input id="price" name="price" type="text" class="form-control" placeholder="Contact Number" value="+91 9090909090">
+                                                    <label for="productdesc">Email Id</label>
+                                                    <input id="price" type="text" class="form-control" placeholder="" value="<?= $recruiter[0]['email'] ?>">
                                                 </div>
-
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
-                                                    <label class="control-label">Skype</label>
-                                                    <input id="price" name="price" type="text" class="form-control" placeholder="Skype" value="skype">
+                                                    <label for="title">Country of Residence</label>
+                                                    <input id="productname" name="country" type="text" class="form-control" placeholder="" value="<?= $recruiter[0]['country'] ?>">
                                                 </div>
 
                                                 <div class="mb-3 col-md-6">
                                                     <label class="control-label">State</label>
-                                                    <select class="form-control select2 form-select">
-                                                        <option>Select State</option>
-                                                        <option value="" selected>Maharashtra</option>
-                                                        <option value="">Madhya Pradesh</option>
-                                                    </select>
+                                                    <input id="productname" name="state" type="text" class="form-control" placeholder="" value="<?= $recruiter[0]['state'] ?>">
                                                 </div>
 
                                             </div>
 
                                         </div>
 
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="mb-3">
-                                                    <label class="control-label">Current Location (City) </label>
-                                                    <input name="city" type="text" class="form-control" placeholder="City" value="Mumbai">
-                                                </div>
+                                        <div class="row">
+                                            <div class="mb-3 col-md-6">
+                                                <label class="control-label">City</label>
+                                                <input name="city" type="text" class="form-control" placeholder="" value="<?= $recruiter[0]['city'] ?>">
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label class="control-label">Domain (Choose the one that Fall in Your area of Expertise)</label>
+                                                <select class="form-control" name="country_code" data-trigger id="choices-single-default" placeholder="This is a search placeholder" required>
+                                                    <option selected disabled>Select Domain</option>
+
+                                                    <?php
+                                                    if (!empty($industry)) {
+                                                        foreach ($industry as $row) {
+                                                    ?>
+
+                                                            <option value=""><?= $row['category'] ?></option>
+
+
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                </select>
 
                                             </div>
-                                        </div>
-
-
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="mb-3 col-md-12">
-                                                    <label class="control-label">Domain (Choose the one that Fall in Your area of Expertise)</label>
-                                                    <select class="form-control select2 form-select">
-                                                        <option>Domain (Choose the one that Fall in Your area of Expertise)</option>
-                                                        <option value="">Accounting / Corporate Finance</option>
-                                                        <option value="">Administrative / Generalist</option>
-                                                        <option value="">Advertising / Event Management / PR</option>
-                                                        <option value="">Aerospace</option>
-                                                        <option value="">Agriculture / Dairy / Fishing</option>
-                                                        <option value="">Architecture / Interior Design</option>
-                                                        <option value="">Automotive / ancillaries</option>
-                                                        <option value="">Banking / Financial Services / Insurance </option>
-                                                        <option value="">BPO / KPO / ITES / CRM / Transcription</option>
-                                                        <option value="">Broadcasting</option>
-                                                        <option value="">Chemical / Polymer / Plastic / Rubber</option>
-                                                        <option value="" selected>E-commerce</option>
-                                                        <option value="">Education</option>
-                                                        <option value="">Data Entry</option>
-                                                    </select>
-                                                </div>
-
+                                            <div class="mb-3 col-md-6">
+                                                <label class="control-label">Country (First Preference)</label>
+                                                <input name="first_country_preference" type="text" class="form-control" placeholder="" value="">
                                             </div>
-
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="control-label">Country (First Prefrence)</label>
-                                                    <select class="form-control select2 form-select">
-                                                        <option>Select Country</option>
-                                                        <option value="">India</option>
-                                                        <option value="" selected>USA</option>
-                                                        <option value="">UK</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="control-label">Country (Second Prefrence)</label>
-                                                    <select class="form-control select2 form-select">
-                                                        <option>Select Country</option>
-                                                        <option value="">India</option>
-                                                        <option value="">USA</option>
-                                                        <option value="" selected>UK</option>
-                                                    </select>
-                                                </div>
-
-
-
+                                            <div class="mb-3 col-md-6">
+                                                <label class="control-label">Country (Second Preference)</label>
+                                                <input name="second_country_preference" type="text" class="form-control" placeholder="" value="">
                                             </div>
-
-                                        </div>
-
-
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="mb-3">
-                                                    <label class="control-label">No of People</label>
-                                                    <select class="form-control select2 form-select">
-                                                        <option>Size of Organization</option>
-                                                        <option value="">Self Employed</option>
-                                                        <option value="">2-10 Employees</option>
-                                                        <option value="">11-50 Employees</option>
-                                                        <option value="">51-200 Employees</option>
-                                                        <option value="">201-500 Employees</option>
-                                                        <option value="">501 + Employees</option>
-
-                                                    </select>
+                                            <div class="mb-3 col-md-6">
+                                                <label class="control-label">No of People</label>
+                                                <select class="form-control select2 form-select">
+                                                    <option>Size of Organization</option>
+                                                    <option value="">Self Employed</option>
+                                                    <option value="">2-10 Employees</option>
+                                                    <option value="">11-50 Employees</option>
+                                                    <option value="">51-200 Employees</option>
+                                                    <option value="">201-500 Employees</option>
+                                                    <option value="">501 + Employees</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label class="control-label">Designation</label>
+                                                <input name="designation" type="text" class="form-control" placeholder="" value="">
+                                            </div>
+                                            <div class="mb-3 col-md-6">
+                                                <label class="control-label">Firm Type</label>
+                                                <div class="checkbox_container">
+                                                    <div class="form-check mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="firmtype[]" value="Permanent Hiring" id="formCheck1">
+                                                        <label class="form-check-label" for="formCheck1">
+                                                            Permanent Hiring
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="firmtype[]" value="Contract Staffing" id="formCheck2" checked>
+                                                        <label class="form-check-label" for="formCheck2">
+                                                            Contract Staffing
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="firmtype[]" value="Executive Search" id="formCheck2" checked>
+                                                        <label class="form-check-label" for="formCheck2">
+                                                            Executive Search
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="firmtype[]" value="Only Payrolling" id="formCheck2" checked>
+                                                        <label class="form-check-label" for="formCheck2">
+                                                            Only Payrolling
+                                                        </label>
+                                                    </div>
                                                 </div>
-
                                             </div>
                                         </div>
-
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="control-label">Designation</label>
-                                                    <input name="designation" type="text" class="form-control" placeholder="Designation" value="HR Manager">
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label class="control-label">Firm Type</label>
-                                                    <select class="form-control select2 form-select">
-                                                        <option>Select Firm Type</option>
-                                                        <option value="">Permanent Hiring</option>
-                                                        <option value="">Contract Staffing </option>
-                                                        <option value="">Executive Search</option>
-                                                        <option value="">Only Payrolling</option>
-                                                    </select>
-                                                </div>
-
-
-
-                                            </div>
-
-                                        </div>
-
-
-
-
-
-
-
-
 
                                         <div class="d-flex flex-wrap gap-2">
                                             <button type="submit" class="btn btn-primary waves-effect waves-light">Save</button>
