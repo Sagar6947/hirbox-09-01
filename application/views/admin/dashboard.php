@@ -117,7 +117,7 @@
                                         <table class="table mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th class="admin-table">S no.</th>
+                                                    <th class="admin-table">Sr. No.</th>
                                                     <th class="admin-table">Name</th>
                                                     <th class="admin-table">Email</th>
                                                     <th class="admin-table">Contact No.</th>

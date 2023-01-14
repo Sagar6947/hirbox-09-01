@@ -26,13 +26,6 @@
                 <i class="fa fa-fw fa-bars"></i>
             </button>
 
-            <!-- App Search-->
-            <!--<form class="app-search d-none d-lg-block">-->
-            <!--    <div class="position-relative">-->
-            <!--        <input type="text" class="form-control" placeholder="Search...">-->
-            <!--        <button class="btn btn-primary" type="button"><i class="bx bx-search-alt align-middle"></i></button>-->
-            <!--    </div>-->
-            <!--</form>-->
         </div>
 
         <div class="d-flex">
@@ -96,35 +89,32 @@
 
                 <li>
                     <a href="<?= base_url('candidate/index') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="user-plus"></i>
                         <span>User Profile</span>
                     </a>
                 </li>
-
-
-
                 <li>
                     <a href="<?= base_url('candidate/view_jobs') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="book-open"></i>
                         <span>View Jobs</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?= base_url('candidate/favorite_jobs') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="bell"></i>
                         <span>Favorite Jobs</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?= base_url('candidate/related_jobs') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="codesandbox"></i>
                         <span>Related Jobs</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="<?= base_url('candidate/apply_jobs') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="file"></i>
                         <span>Applied Jobs</span>
                     </a>
                 </li>

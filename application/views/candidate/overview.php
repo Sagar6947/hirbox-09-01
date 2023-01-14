@@ -8,7 +8,6 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container">
-                <!-- start page title -->
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -144,48 +143,117 @@
 
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="mb-3">
+                                                            <label for="basicpill-firstname-input" class="form-label">Profile Image</label>
+                                                            <input type="file" class="form-control" name="img" accept=".png, .jpg, .jpeg">
+                                                            <input type="hidden" class="form-control" name="image" value="<?= $candidate_detail[0]['image'] ?>">
+
+                                                            <br>
+                                                            <?php
+                                                            if ($candidate_detail[0]['image'] != '') { ?>
+                                                                <img src="<?= base_url() ?>/uploads/candidate/<?= $candidate_detail[0]['image'] ?>" width="60" />
+
+
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
-                                                <div class="">
-                                                    <div class="row">
 
-                                                        <div class="col-lg-6">
-                                                            <label for="basicpill-firstname-input" class="form-label">
-                                                                Where are you based?</label>
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-firstname-input" class="form-label">*
-                                                                    Country</label>
-                                                                <input type="text" name="country" class="form-control txtPlaces" id="" value="<?= $candidate_detail[0]['address'] ?>">
-                                                                <datalist id="browsers"></datalist>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <label for="basicpill-firstname-input" class="form-label" style="visibility: hidden;">
-                                                                Where are you based?</label>
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-firstname-input" class="form-label">*
-                                                                    City</label>
-                                                                <input type="text" name="city" class="form-control txtPlaces" id="" value="<?= $candidate_detail[0]['address'] ?>">
-                                                                <datalist id="browsers"></datalist>
-                                                            </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="basicpill-firstname-input" class="form-label">
+                                                            Where are you based?</label>
+                                                        <div class="mb-3">
+                                                            <label for="basicpill-firstname-input" class="form-label">*
+                                                                Country</label>
+                                                            <input type="text" name="country" class="form-control txtPlaces" id="" value="<?= $candidate_detail[0]['address'] ?>">
+                                                            <datalist id="browsers"></datalist>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
+                                                        <label for="basicpill-firstname-input" class="form-label" style="visibility: hidden;">
+                                                            Where are you based?</label>
+                                                        <div class="mb-3">
+                                                            <label for="basicpill-firstname-input" class="form-label">*
+                                                                City</label>
+                                                            <input type="text" name="city" class="form-control txtPlaces" id="" value="<?= $candidate_detail[0]['address'] ?>">
+                                                            <datalist id="browsers"></datalist>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label for="basicpill-lastname-input" class="form-label">*
+                                                            Current Role </label>
+                                                        <select class="form-control" name="designation" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
+                                                            <option value="">Select</option>
+                                                            <?php
+                                                            if ($role) {
+                                                                foreach ($role as $row) {
+                                                            ?>
+                                                                    <option value="<?= $row['rid'] ?>" <?= (($candidate_detail[0]['designation'] == $row['rid'])
+                                                                                                            ? 'selected' : '') ?>>
+                                                                        <?= $row['role'] ?>
+                                                                    </option>
+                                                            <?php
+                                                                }
+                                                            }
+                                                            ?>
+
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="basicpill-lastname-input" class="form-label">
+                                                            Experience </label>
                                                         <div class="mb-3">
                                                             <label for="basicpill-lastname-input" class="form-label">*
-                                                                Current Role </label>
-                                                            <select class="form-control" name="designation" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
+                                                                Year </label>
+                                                            <select class="form-control" name="exp_year" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
                                                                 <option value="">Select</option>
                                                                 <?php
-                                                                if ($role) {
-                                                                    foreach ($role as $row) {
+                                                                for ($i = 1; $i <= 9; $i++) {
+
                                                                 ?>
-                                                                        <option value="<?= $row['rid'] ?>" <?= (($candidate_detail[0]['designation'] == $row['rid'])
-                                                                                                                ? 'selected' : '') ?>>
-                                                                            <?= $row['role'] ?>
-                                                                        </option>
+                                                                    <option value="<?= $i ?>" <?= (($candidate_detail[0]['exp_year'] == $i)
+                                                                                                    ? 'selected' : '') ?>>
+                                                                        <?= $i ?> Year<?= (($i == 1) ? '' : 's') ?>
+                                                                    </option>
                                                                 <?php
-                                                                    }
+                                                                }
+
+                                                                ?>
+                                                                <option value="10" <?= (($candidate_detail[0]['exp_year'] == 10)
+                                                                                        ? 'selected' : '') ?>>10+ Years</option>
+
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label for="basicpill-lastname-input" class="form-label" style="visibility: hidden;">
+                                                            Experience </label>
+                                                        <div class="mb-3">
+                                                            <label for="basicpill-lastname-input" class="form-label">*
+                                                                Month </label>
+                                                            <select class="form-control" name="exp_months" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
+                                                                <option value="">Select</option>
+                                                                <?php
+                                                                for ($i = 1; $i <= 11; $i++) {
+
+                                                                ?>
+                                                                    <option value="<?= $i ?>" <?= (($candidate_detail[0]['exp_months'] == $i)
+                                                                                                    ? 'selected' : '') ?>>
+                                                                        <?= $i ?> Month<?= (($i == 1) ? '' : 's') ?>
+                                                                    </option>
+                                                                <?php
                                                                 }
                                                                 ?>
 
@@ -193,99 +261,6 @@
 
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <label for="basicpill-lastname-input" class="form-label">
-                                                                Experience </label>
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-lastname-input" class="form-label">*
-                                                                    Year </label>
-                                                                <select class="form-control" name="exp_year" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
-                                                                    <option value="">Select</option>
-                                                                    <?php
-                                                                    for ($i = 1; $i <= 9; $i++) {
-
-                                                                    ?>
-                                                                        <option value="<?= $i ?>" <?= (($candidate_detail[0]['exp_year'] == $i)
-                                                                                                        ? 'selected' : '') ?>>
-                                                                            <?= $i ?> Year<?= (($i == 1) ? '' : 's') ?>
-                                                                        </option>
-                                                                    <?php
-                                                                    }
-
-                                                                    ?>
-                                                                    <option value="10" <?= (($candidate_detail[0]['exp_year'] == 10)
-                                                                                            ? 'selected' : '') ?>>10+ Years</option>
-
-                                                                </select>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <label for="basicpill-lastname-input" class="form-label" style="visibility: hidden;">
-                                                                Experience </label>
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-lastname-input" class="form-label">*
-                                                                    Month </label>
-                                                                <select class="form-control" name="exp_months" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
-                                                                    <option value="">Select</option>
-                                                                    <?php
-                                                                    for ($i = 1; $i <= 11; $i++) {
-
-                                                                    ?>
-                                                                        <option value="<?= $i ?>" <?= (($candidate_detail[0]['exp_months'] == $i)
-                                                                                                        ? 'selected' : '') ?>>
-                                                                            <?= $i ?> Month<?= (($i == 1) ? '' : 's') ?>
-                                                                        </option>
-                                                                    <?php
-                                                                    }
-                                                                    ?>
-
-                                                                </select>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-
-
-                                                    <div class="row">
-
-                                                        <div class="col-lg-4">
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-email-input" class="form-label">Job title</label>
-                                                                <input type="text" name="job_title" class="form-control" id="basicpill-email-input" placeholder="e.g. : Design Director" value="<?= $candidate_detail[0]['job_title'] ?>">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-4">
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-email-input" class="form-label">Company</label>
-                                                                <input type="text" name="job_company" class="form-control" id="basicpill-email-input" placeholder="e.g. : Omnicorp" value="<?= $candidate_detail[0]['job_company'] ?>">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-4">
-                                                            <div class="mb-3">
-                                                                <label for="basicpill-email-input" class="form-label"></label>
-                                                                <br>
-                                                                <input type="checkbox" id="not_employeed" name="not_employeed" value="<?= $candidate_detail[0]['not_employeed'] ?>" <?= (($candidate_detail[0]['not_employeed'] == 1)
-                                                                                                                                                                                        ? 'checked' : '') ?> />
-                                                                <label for="not_employeed"> I'm not currently
-                                                                    employed</label><br>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-
-
-                                                <div class="col-lg-12">
-                                                    <label for="1" class="form-label">Experience-Summary</label>
-                                                    <textarea class="form-control" name="Experience" rows="5"><?= $candidate_detail[0]['Experience'] ?> </textarea>
                                                 </div>
 
                                                 <ul class="pager wizard twitter-bs-wizard-pager-link">
@@ -387,119 +362,119 @@
                                                                             <h6>
                                                                                 There are no details added.
                                                                             </h6>
-
-
                                                                         </div>
+
+
+                                                                    <?php
+                                                                    }
+                                                                    ?>
+
                                                                 </div>
-
-                                                            <?php       }
-                                                            ?>
-
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
 
-                                            <div class="row">
-                                                <div class="col-xl-12">
-                                                    <div class="card">
-                                                        <div class="card-header align-items-center row">
-                                                            <div class="col-sm-9">
-                                                                <h3 class="mb-0 flex-grow-1">Experience Details</h3>
+
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <div class="card">
+                                                            <div class="card-header align-items-center row">
+                                                                <div class="col-sm-9">
+                                                                    <h3 class="mb-0 flex-grow-1">Experience Details</h3>
+                                                                </div>
+                                                                <div class="col-sm-3">
+                                                                    <button type="button" class="btn btn-dark w-100 waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#composexpemodal">
+                                                                        Add Experience
+                                                                    </button>
+                                                                </div>
                                                             </div>
-                                                            <div class="col-sm-3">
-                                                                <button type="button" class="btn btn-dark w-100 waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#composexpemodal">
-                                                                    Add Experience
-                                                                </button>
-                                                            </div>
-                                                        </div>
 
-                                                        <div class="card-body px-0">
-                                                            <div class="px-3" data-simplebar style="max-height: 386px;">
+                                                            <div class="card-body px-0">
+                                                                <div class="px-3" data-simplebar style="max-height: 386px;">
 
-                                                                <?php
-                                                                if ($experience_data != '') {
+                                                                    <?php
+                                                                    if ($experience_data != '') {
 
-                                                                    foreach ($experience_data as $exp) {
+                                                                        foreach ($experience_data as $exp) {
 
-                                                                        $skill = json_decode($exp['key_skill'], true);
-                                                                        $role = getRowById('tbl_role', 'rid', $exp['role']);
-                                                                        $industries = getRowById('tbl_industries', 'cate_id', $exp['industry_company']);
-                                                                ?>
+                                                                            $skill = json_decode($exp['key_skill'], true);
+                                                                            $role = getRowById('tbl_role', 'rid', $exp['role']);
+                                                                            $industries = getRowById('tbl_industries', 'cate_id', $exp['industry_company']);
+                                                                    ?>
 
-                                                                        <div class="d-flex align-items-center pb-4">
+                                                                            <div class="d-flex align-items-center pb-4">
 
-                                                                            <div class="flex-grow-1">
-                                                                                <h5 class="font-size-15 mb-3"><a href="#" class="text-dark"><?= $role[0]['role'] ?></a></h5>
-                                                                                <p>Company : <span class="text-muted"> <?= $exp['company'] ?></span></p>
-                                                                                <p>Company Industry : <span class="text-muted"> <?= $industries[0]['category'] ?></span></p>
-                                                                                <p>Joining date/Leaving Date : <span class="text-muted"> <?= $exp['joining_date'] ?>/<?= $exp['leaving_date'] ?></span></p>
-                                                                                <p>Key Skills :
-                                                                                    <?php
-                                                                                    if ($skill != '') {
-                                                                                        foreach ($skill as $skillno) {
+                                                                                <div class="flex-grow-1">
+                                                                                    <h5 class="font-size-15 mb-3"><a href="#" class="text-dark"><?= $role[0]['role'] ?></a></h5>
+                                                                                    <p>Company : <span class="text-muted"> <?= $exp['company'] ?></span></p>
+                                                                                    <p>Company Industry : <span class="text-muted"> <?= $industries[0]['category'] ?></span></p>
+                                                                                    <p>Joining date/Leaving Date : <span class="text-muted"> <?= $exp['joining_date'] ?>/<?= $exp['leaving_date'] ?></span></p>
+                                                                                    <p>Key Skills :
+                                                                                        <?php
+                                                                                        if ($skill != '') {
+                                                                                            foreach ($skill as $skillno) {
 
 
-                                                                                            $skill_data =  getRowById('tbl_technologies', 'tid', $skillno);
-                                                                                            // print_r($skill_data);
-                                                                                    ?>
+                                                                                                $skill_data =  getRowById('tbl_technologies', 'tid', $skillno);
+                                                                                                // print_r($skill_data);
+                                                                                        ?>
 
-                                                                                            <span class="text-muted"> <?= $skill_data[0]['name'] ?></span> &nbsp;
+                                                                                                <span class="text-muted"> <?= $skill_data[0]['name'] ?></span> &nbsp;
 
-                                                                                    <?php
+                                                                                        <?php
+                                                                                            }
                                                                                         }
-                                                                                    }
-                                                                                    ?>
-                                                                                </p>
+                                                                                        ?>
+                                                                                    </p>
 
-                                                                                <p>Notice Period : <span class="text-muted"> <?= $exp['notice_period'] ?> Days</span></p>
-                                                                            </div>
-                                                                            <div class="flex-shrink-0 text-end">
-                                                                                <div class="dropdown align-self-start">
-                                                                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                        <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
-                                                                                    </a>
-                                                                                    <div class="dropdown-menu">
-                                                                                        <!-- <a class="dropdown-item" href="#">Copy</a> -->
+                                                                                    <p>Notice Period : <span class="text-muted"> <?= $exp['notice_period'] ?> Days</span></p>
+                                                                                </div>
+                                                                                <div class="flex-shrink-0 text-end">
+                                                                                    <div class="dropdown align-self-start">
+                                                                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                            <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                                                        </a>
+                                                                                        <div class="dropdown-menu">
+                                                                                            <!-- <a class="dropdown-item" href="#">Copy</a> -->
 
-                                                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
+                                                                            <hr>
+                                                                        <?php
+
+                                                                        }
+                                                                    } else {
+                                                                        ?>
+                                                                        <div class="align-items-center pb-4">
+                                                                            <h6>
+                                                                                There are no experience details added.
+                                                                            </h6>
                                                                         </div>
-                                                                        <hr>
-                                                                    <?php
 
-                                                                    }
-                                                                } else {
+                                                                    <?php       }
                                                                     ?>
-                                                                    <div class="align-items-center pb-4">
-                                                                        <h6>
-                                                                            There are no experience details added.
-                                                                        </h6>
-                                                                    </div>
 
-                                                                <?php       }
-                                                                ?>
-
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <ul class="pager wizard twitter-bs-wizard-pager-link">
+                                                    <li class="previous"><a href="javascript: void(0);" class="btn btn-primary orange_btn" onclick="nextTab()"><i class="bx bx-chevron-left me-1"></i> Previous</a>
+                                                    </li>
+                                                    <li class="next"><a href="javascript: void(0);" class="btn btn-primary orange_btn" onclick="nextTab()">Next <i class="bx bx-chevron-right ms-1"></i></a></li>
+                                                </ul>
                                             </div>
 
-                                            <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                <li class="previous"><a href="javascript: void(0);" class="btn btn-primary orange_btn" onclick="nextTab()"><i class="bx bx-chevron-left me-1"></i> Previous</a>
-                                                </li>
-                                                <li class="next"><a href="javascript: void(0);" class="btn btn-primary orange_btn" onclick="nextTab()">Next <i class="bx bx-chevron-right ms-1"></i></a></li>
-                                            </ul>
-                                        </div>
 
+                                            <div class="tab-pane" id="Preferences">
 
-                                        <div class="tab-pane" id="Preferences">
-                                            <div>
 
                                                 <div class="row">
                                                     <div class="col-lg-4">
@@ -571,8 +546,6 @@
                                                 </div>
 
                                                 <hr>
-
-
                                                 <div class="row">
                                                     <label for="basicpill-cstno-input" class="form-label">What
                                                         is your desired salary?</label>
@@ -614,8 +587,6 @@
 
                                                 </div>
                                                 <hr>
-
-
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="mb-3">
@@ -632,8 +603,9 @@
                                                                     foreach ($role as $rl) {
                                                                         $optionss = json_decode($candidate_detail[0]['role_looking_for'], true);
 
+
                                                                 ?>
-                                                                        <option value="<?= $rl['rid'] ?>" <?= ((in_array($rl['rid'], $optionss)) ? 'selected' : '') ?>>
+                                                                        <option value="<?= $rl['rid'] ?>" <?php if ($optionss != null) { ?> <?= ((in_array($rl['rid'], $optionss)) ? 'selected' : '') ?> <?php } ?>>
                                                                             <?= $rl['role'] ?>
                                                                         </option>
                                                                 <?php
@@ -662,7 +634,7 @@
                                                                         $options = json_decode($candidate_detail[0]['industries'], true);
 
                                                                 ?>
-                                                                        <option value="<?= $irow['cate_id'] ?>" <?= ((in_array($irow['cate_id'], $options)) ? 'selected' : '') ?>>
+                                                                        <option value="<?= $irow['cate_id'] ?>" <?php if ($options != null) { ?> <?= ((in_array($irow['cate_id'], $options)) ? 'selected' : '') ?> <?php } ?>>
                                                                             <?= $irow['category'] ?>
                                                                         </option>
                                                                 <?php
@@ -686,12 +658,8 @@
                                                         <datalist id="browsers"></datalist>
                                                     </div>
                                                 </div>
-
                                                 <hr>
-
                                                 <div class="row ">
-
-
                                                     <div class="col-lg-8 us">
                                                         <h3>* Countries work authorization </h3>
                                                         <table class="table">
@@ -726,8 +694,6 @@
                                                         </table>
 
                                                     </div>
-
-
                                                 </div>
 
                                                 <hr>
@@ -825,218 +791,159 @@
                                                     <li class="next"><a href="javascript: void(0);" class="btn btn-primary orange_btn" onclick="nextTab()">Next <i class="bx bx-chevron-right ms-1"></i></a></li>
                                                 </ul>
                                             </div>
-                                        </div>
 
+                                            <div class="tab-pane" id="Culture">
 
-                                        <div class="tab-pane" id="Culture">
+                                                <div class="col-lg-7">
+                                                    <div class="mb-3">
+                                                        <label for="basicpill-phoneno-input" class="form-label"> Which
+                                                            technologies are you most interested in working
+                                                            with?</label>
+                                                        <select class="form-control" name="technologies_used[]" data-trigger d="choices-multiple-remove-button" placeholder="This is a search placeholder" multiple>
+                                                            <option value="">Select</option>
+                                                            <?php
+                                                            if ($tech) {
+                                                                foreach ($tech as $techno) {
+                                                                    $option = json_decode($candidate_detail[0]['technologies_used'], true);
 
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="basicpill-phoneno-input" class="form-label"> Which
-                                                        technologies are you most interested in working
-                                                        with?</label>
-                                                    <select class="form-control" name="technologies_used[]" data-trigger d="choices-multiple-remove-button" placeholder="This is a search placeholder" multiple>
-                                                        <option value="">Select</option>
-                                                        <?php
-                                                        if ($tech) {
-                                                            foreach ($tech as $techno) {
-                                                                $option = json_decode($candidate_detail[0]['technologies_used'], true);
+                                                            ?>
+                                                                    <option value="<?= $techno['tid'] ?>" <?= ((in_array($techno['tid'], $option)) ? 'selected' : '') ?>>
+                                                                        <?= $techno['name'] ?>
+                                                                    </option>
+                                                            <?php
 
-                                                        ?>
-                                                                <option value="<?= $techno['tid'] ?>" <?= ((in_array($techno['tid'], $option)) ? 'selected' : '') ?>>
-                                                                    <?= $techno['name'] ?>
-                                                                </option>
-                                                        <?php
-
+                                                                }
                                                             }
-                                                        }
-                                                        ?>
+                                                            ?>
 
 
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <hr>
-
-
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label for="basicpill-phoneno-input" class="form-label">What
-                                                        motivates you more?</label>
-                                                    <br>
-                                                    <input type="radio" id="html" name="motivates_you" value="Building products" <?= (($candidate_detail[0]['motivates_you'] == 'Building products'
-                                                                                                                                    ) ? 'checked' : '') ?>>
-                                                    <label for="html">Building products</label> &nbsp; &nbsp;
-                                                    <input type="radio" id="css" name="motivates_you" value="Solving technical problems" <?= (($candidate_detail[0]['motivates_you'] == 'Solving technical problems'
-                                                                                                                                            ) ? 'checked' : '') ?>>
-                                                    <label for="css">Solving technical problems</label><br>
-                                                </div>
-                                            </div>
-                                            <hr>
-
-
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label for="basicpill-phoneno-input" class="form-label">Over the
-                                                        next five years, what career track do you want to
-                                                        follow?</label>
-                                                    <br>
-                                                    <input type="radio" id="html" name="career_track" value="Individual contributor" <?= (($candidate_detail[0]['career_track'] == 'Individual contributor'
-                                                                                                                                        ) ? 'checked' : '') ?>>
-                                                    <label for="html">Individual contributor</label> &nbsp; &nbsp;
-                                                    <input type="radio" id="css" name="career_track" value="Manager" <?= (($candidate_detail[0]['career_track'] == 'Manager')
-                                                                                                                            ? 'checked' : '') ?>>
-                                                    <label for="css">Manager</label><br>
-                                                </div>
-                                            </div>
-                                            <hr>
-
-
-
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label for="basicpill-phoneno-input" class="form-label">What
-                                                        environment do you work better in?</label>
-                                                    <br>
-                                                    <input type="radio" id="html" name="work_environment" value="Clear role and set of responsibilities. Consistent feedback from management." <?= (($candidate_detail[0]['work_environment'] == 'Clear role and set of responsibilities. Consistent feedback from management.'
-                                                                                                                                                                                                ) ? 'checked' : '') ?>>
-                                                    <label for="html">Clear role and set of responsibilities.
-                                                        Consistent feedback from management.</label> <br>
-                                                    <input type="radio" id="css" name="work_environment" value="Employees wear a lot of hats. Assignments often require employees to' figure it out' on their own." <?= (($candidate_detail[0]['work_environment'] == "Employees wear a lot of hats. Assignments often require employees to' figure it out' on their own."
-                                                                                                                                                                                                                    ) ? 'checked' : '') ?>>
-                                                    <label for="css">Employees wear a lot of hats. Assignments often
-                                                        require employees to "figure it out" on their
-                                                        own.</label><br>
-                                                </div>
-                                            </div>
-                                            <hr>
-
-
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-
-                                                    <label for="basicpill-phoneno-input" class="form-label">What's
-                                                        most important to you in your next job? </label>
-                                                    <br>
-                                                    <div>
-
-
-                                                        <div class="list_items_wrapper">
-
-
-                                                            <div class="list_items">
-
-
-                                                                <input type="radio" id="html" name="important_next_job" value="Having a say in what I work on and how I work" <?= (($candidate_detail[0]['important_next_job'] == 'Having a say in what I work on and how I work'
-                                                                                                                                                                                ) ? 'checked' : '') ?>>
-
-
-                                                                <label for="html">Having a say in what I work on and how I
-                                                                    work</label>
-
-
-                                                            </div>
-
-                                                            <div class="list_items">
-
-                                                                <input type="radio" id="css" name="important_next_job" value="Opportunities to progress within the company" <?= (($candidate_detail[0]['important_next_job'] == 'Opportunities to progress within the company'
-                                                                                                                                                                            ) ? 'checked' : '') ?>>
-                                                                <label for="css">Opportunities to progress within the
-                                                                    company</label>
-
-                                                            </div>
-
-
-                                                            <div class="list_items">
-
-                                                                <input type="radio" id="css" name="important_next_job" value="Team members I can learn from" <?= (($candidate_detail[0]['important_next_job'] == 'Team members I can learn from'
-                                                                                                                                                                ) ? 'checked' : '') ?>>
-                                                                <label for="css">Team members I can learn from</label>
-
-                                                            </div>
-
-
-                                                            <div class="list_items">
-
-                                                                <input type="radio" id="css" name="important_next_job" value="A company with a good growth trajectory" <?= (($candidate_detail[0]['important_next_job'] == 'A company with a good growth trajectory'
-                                                                                                                                                                        ) ? 'checked' : '') ?>>
-                                                                <label for="css">A company with a good growth trajectory</label>
-
-                                                            </div>
-
-                                                            <div class="list_items">
-
-                                                                <input type="radio" id="css" name="important_next_job" value="Having a say in the company's and/or my team's direction" <?= (($candidate_detail[0]['important_next_job'] == "Having a say in the company's and/or my team's direction"
-                                                                                                                                                                                        ) ? 'checked' : '') ?>>
-                                                                <label for="css">Having a say in the company's and/or my team's direction</label>
-                                                            </div>
-
-                                                            <div class="list_items">
-                                                                <input type="radio" id="css" name="important_next_job" value="Mentorship opportunities" <?= (($candidate_detail[0]['important_next_job'] == 'Mentorship opportunities'
-                                                                                                                                                        ) ? 'checked' : '') ?>>
-                                                                <label for="css">Mentorship opportunities</label>
-                                                            </div>
-
-
-                                                            <div class="list_items">
-                                                                <input type="radio" id="css" name="important_next_job" value="Learn new things and develop my skills" <?= (($candidate_detail[0]['important_next_job'] == 'Learn new things and develop my skills'
-                                                                                                                                                                        ) ? 'checked' : '') ?>>
-                                                                <label for="css">Learn new things and develop my skills</label>
-                                                            </div>
-
-                                                            <div class="list_items">
-
-                                                                <input type="radio" id="css" name="important_next_job" value="Challenging problems to work on" <?= (($candidate_detail[0]['important_next_job'] == 'Challenging problems to work on'
-                                                                                                                                                                ) ? 'checked' : '') ?>>
-                                                                <label for="css">Challenging problems to work on</label>
-                                                            </div>
-
-                                                            <div class="list_items">
-                                                                <input type="radio" id="css" name="important_next_job" value="A diverse team" <?= (($candidate_detail[0]['important_next_job'] == 'A diverse team'
-                                                                                                                                                ) ? 'checked' : '') ?>>
-                                                                <label for="css">A diverse team</label>
-                                                            </div>
-
-                                                        </div>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <hr>
-
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
-                                                        <label for="basicpill-phoneno-input" class="form-label">How
-                                                            important is it that your next job has a flexible remote
-                                                            work policy?</label>
+
+                                                        <label for="basicpill-phoneno-input" class="form-label">What's
+                                                            most important to you in your next job? </label>
                                                         <br>
-                                                        <input type="radio" id="html" name="flexible_remote_work" value="Very important" <?= (($candidate_detail[0]['flexible_remote_work'] == 'Very important'
-                                                                                                                                            ) ? 'checked' : '') ?>>
-                                                        <label for="html">Very important</label> <br>
-                                                        <input type="radio" id="css" name="flexible_remote_work" value="Important" <?= (($candidate_detail[0]['flexible_remote_work'] == 'Important'
-                                                                                                                                    ) ? 'checked' : '') ?>>
-                                                        <label for="css">Important</label><br>
-                                                        <input type="radio" id="css" name="flexible_remote_work" value="Not important" <?= (($candidate_detail[0]['flexible_remote_work'] == 'Not important'
-                                                                                                                                        ) ? 'checked' : '') ?>>
-                                                        <label for="css">Not important</label>
+                                                        <div>
+
+
+                                                            <div class="list_items_wrapper">
+
+
+                                                                <div class="list_items">
+
+
+                                                                    <input type="radio" id="html" name="important_next_job" value="Having a say in what I work on and how I work" <?= (($candidate_detail[0]['important_next_job'] == 'Having a say in what I work on and how I work') ? 'checked' : '') ?>>
+
+
+                                                                    <label for="html">Having a say in what I work on and how I
+                                                                        work</label>
+
+
+                                                                </div>
+
+                                                                <div class="list_items">
+
+                                                                    <input type="radio" id="css" name="important_next_job" value="Opportunities to progress within the company" <?= (($candidate_detail[0]['important_next_job'] == 'Opportunities to progress within the company') ? 'checked' : '') ?>>
+                                                                    <label for="css">Opportunities to progress within the
+                                                                        company</label>
+
+                                                                </div>
+
+
+                                                                <div class="list_items">
+
+                                                                    <input type="radio" id="css" name="important_next_job" value="Team members I can learn from" <?= (($candidate_detail[0]['important_next_job'] == 'Team members I can learn from'
+                                                                                                                                                                    ) ? 'checked' : '') ?>>
+                                                                    <label for="css">Team members I can learn from</label>
+
+                                                                </div>
+
+
+                                                                <div class="list_items">
+
+                                                                    <input type="radio" id="css" name="important_next_job" value="A company with a good growth trajectory" <?= (($candidate_detail[0]['important_next_job'] == 'A company with a good growth trajectory'
+                                                                                                                                                                            ) ? 'checked' : '') ?>>
+                                                                    <label for="css">A company with a good growth trajectory</label>
+
+                                                                </div>
+
+                                                                <div class="list_items">
+
+                                                                    <input type="radio" id="css" name="important_next_job" value="Having a say in the company's and/or my team's direction" <?= (($candidate_detail[0]['important_next_job'] == "Having a say in the company's and/or my team's direction") ? 'checked' : '') ?>>
+                                                                    <label for="css">Having a say in the company's and/or my team's direction</label>
+                                                                </div>
+
+                                                                <div class="list_items">
+                                                                    <input type="radio" id="css" name="important_next_job" value="Mentorship opportunities" <?= (($candidate_detail[0]['important_next_job'] == 'Mentorship opportunities'
+                                                                                                                                                            ) ? 'checked' : '') ?>>
+                                                                    <label for="css">Mentorship opportunities</label>
+                                                                </div>
+
+
+                                                                <div class="list_items">
+                                                                    <input type="radio" id="css" name="important_next_job" value="Learn new things and develop my skills" <?= (($candidate_detail[0]['important_next_job'] == 'Learn new things and develop my skills'
+                                                                                                                                                                            ) ? 'checked' : '') ?>>
+                                                                    <label for="css">Learn new things and develop my skills</label>
+                                                                </div>
+
+                                                                <div class="list_items">
+
+                                                                    <input type="radio" id="css" name="important_next_job" value="Challenging problems to work on" <?= (($candidate_detail[0]['important_next_job'] == 'Challenging problems to work on'
+                                                                                                                                                                    ) ? 'checked' : '') ?>>
+                                                                    <label for="css">Challenging problems to work on</label>
+                                                                </div>
+
+                                                                <div class="list_items">
+                                                                    <input type="radio" id="css" name="important_next_job" value="A diverse team" <?= (($candidate_detail[0]['important_next_job'] == 'A diverse team'
+                                                                                                                                                    ) ? 'checked' : '') ?>>
+                                                                    <label for="css">A diverse team</label>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                    <hr>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="mb-3">
+                                                            <label for="basicpill-phoneno-input" class="form-label">How
+                                                                important is it that your next job has a flexible remote
+                                                                work policy?</label>
+                                                            <br>
+                                                            <input type="radio" id="html" name="flexible_remote_work" value="Very important" <?= (($candidate_detail[0]['flexible_remote_work'] == 'Very important'
+                                                                                                                                                ) ? 'checked' : '') ?>>
+                                                            <label for="html">Very important</label> <br>
+                                                            <input type="radio" id="css" name="flexible_remote_work" value="Important" <?= (($candidate_detail[0]['flexible_remote_work'] == 'Important'
+                                                                                                                                        ) ? 'checked' : '') ?>>
+                                                            <label for="css">Important</label><br>
+                                                            <input type="radio" id="css" name="flexible_remote_work" value="Not important" <?= (($candidate_detail[0]['flexible_remote_work'] == 'Not important'
+                                                                                                                                            ) ? 'checked' : '') ?>>
+                                                            <label for="css">Not important</label>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+
+                                                    <ul class="pager wizard twitter-bs-wizard-pager-link">
+                                                        <li class="previous"><a href="javascript: void(0);" class="btn btn-primary orange_btn" onclick="nextTab()"><i class="bx bx-chevron-left me-1"></i> Previous</a>
+                                                        </li>
+
+                                                        <li class="next"><a href="<?= base_url('Candidate/view_profile') ?>" class="btn btn-primary orange_btn">Preview Profile <i class="bx bx-spreadsheet ms-1"></i></a></li>
+                                                    </ul>
                                                 </div>
-                                                <hr>
 
-                                                <ul class="pager wizard twitter-bs-wizard-pager-link">
-                                                    <li class="previous"><a href="javascript: void(0);" class="btn btn-primary orange_btn" onclick="nextTab()"><i class="bx bx-chevron-left me-1"></i> Previous</a>
-                                                    </li>
-
-                                                    <li class="next"><a href="<?= base_url('Candidate/view_profile') ?>" class="btn btn-primary orange_btn">Preivew Profile <i class="bx bx-spreadsheet ms-1"></i></a></li>
-                                                </ul>
                                             </div>
 
                                         </div>
-
                                     </div>
-                                </div>
 
-                                <div class="card mt-5 update_btn_wrapper">
+                                    <div class="card mt-5 update_btn_wrapper">
 
-                                    <div class="col-sm-12"> <input type="submit" class="btn btn-outline-success" value="Update Now"></div>
+                                        <div class="col-sm-12"> <input type="submit" class="btn btn-outline-success" value="Update Now"></div>
+                                    </div>
                                 </div>
                             </form>
 

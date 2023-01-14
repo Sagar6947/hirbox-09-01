@@ -5,7 +5,7 @@
             <div class="navbar-brand-box">
                 <a href="<?= base_url('company') ?>" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="<?= base_url() ?>assets/images/logo.png" alt="" width="150px">
+                    <img src="<?= base_url() ?>assets/images/hb-fav.png" alt="" height="30">
                     </span>
                     <span class="logo-lg">
                         <img src="<?= base_url() ?>assets/images/logo.png" alt="" width="150px">
@@ -14,7 +14,7 @@
 
                 <a href="<?= base_url('company') ?>" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="<?= base_url() ?>assets/images/logo.png" alt="" width="150px">
+                    <img src="<?= base_url() ?>assets/images/hb-fav.png" alt="" height="30">
                     </span>
                     <span class="logo-lg">
                         <img src="<?= base_url() ?>assets/images/logo.png" alt="" width="150px">
@@ -100,7 +100,7 @@
 
                 <li>
                     <a href="<?= base_url('company-profile') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="globe"></i>
 
                         <span>Company Profile</span>
                     </a>
@@ -116,7 +116,7 @@
 
                 <li>
                     <a href="<?= base_url('company/manage-team-member') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="users"></i>
 
                         <span>Manage Team Members</span>
                     </a>
@@ -126,7 +126,7 @@
 
                 <li>
                     <a href="<?= base_url('post-a-job') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="briefcase"></i>
 
                         <span>Post a Job</span>
                     </a>
@@ -134,7 +134,7 @@
 
                 <li>
                     <a href="<?= base_url('company/view-post-job') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="file-text"></i>
 
                         <span>View Jobs</span>
                     </a>
@@ -143,14 +143,14 @@
 
                 <li>
                     <a href="<?= base_url('company/apply-candidate-report') ?>">
-                        <i data-feather="layers"></i>
+                        <i data-feather="user-plus"></i>
 
-                        <span>Apply Candidates</span>
+                        <span>Applied Candidates</span>
                     </a>
                 </li>
 
 
-
+<!-- 
                 <li class="disabled">
                     <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="layers"></i>
@@ -161,7 +161,7 @@
                         <li><a href="<?= base_url('company/apply-candidate-report') ?>">Candidate Success & Status Report</a></li>
 
                     </ul>
-                </li>
+                </li> -->
 
 
 

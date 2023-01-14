@@ -41,6 +41,18 @@ class Candidate extends CI_Controller
                     unlink('uploads/resume/' . $resume);
                 }
             }
+
+            $image = $post['image'];
+
+            if ($_FILES['img']['name'] != '') {
+                $img = imageUpload('img', 'uploads/candidate/');
+                $post['image'] = $img;
+                if ($$image != "") {
+                    unlink('uploads/candidate/' . $$image);
+                }
+            }
+
+
             $update = $this->CommonModal->updateRowById('tbl_candidate_registration', 'candidate_id ', sessionId('candidate_id'), $post);
             if ($update) {
                 $this->session->set_flashdata('msg', 'Profile Updated successfully');
@@ -144,6 +156,7 @@ class Candidate extends CI_Controller
         $data['title'] = "Complete Profile  | Hirbox";
         if (count($_POST) > 0) {
             $post = $this->input->post();
+            $post['image'] = imageUpload('image', 'uploads/candidate/');
             $update = $this->CommonModal->updateRowById('tbl_candidate_registration', 'candidate_id ', $id, $post);
             redirect(base_url() . 'candidate/preferences');
         } else {
@@ -213,8 +226,6 @@ class Candidate extends CI_Controller
             $post = $this->input->post();
             $post['resume'] = resumeUpload('resume', 'uploads/resume/');
 
-
-
             $update = $this->CommonModal->updateRowById('tbl_candidate_registration', 'candidate_id ', sessionId('candidate_id'), $post);
             redirect(base_url() . 'candidate/related_jobs');
         } else {
@@ -237,7 +248,7 @@ class Candidate extends CI_Controller
         $this->load->view('candidate/view-jobs', $data);
     }
 
-    public function view_job_details($jdid)
+    public function view_job_details($jdid, $title)
     {
 
         $job_id = $jdid;
@@ -246,7 +257,6 @@ class Candidate extends CI_Controller
         $company = $this->CommonModal->getRowById('tbl_company_registration', 'company_id', $data['job_detail'][0]['company_id']);
         $data['saved_info'] = $this->CommonModal->getRowByMoreId('tbl_saved_job', array('job_id' => $job_id, 'candidate_id' => sessionId('candidate_id')));
         $data['applied_validation'] = $this->CommonModal->getRowByMoreId('tbl_applied_candidate', array('job_id' => $job_id, 'candidate_id' => sessionId('candidate_id')));
-
         if (count($_POST) > 0) {
             $post = $this->input->post();
             $post['candidate_id'] = sessionId('candidate_id');

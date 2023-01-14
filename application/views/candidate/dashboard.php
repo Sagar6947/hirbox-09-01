@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0 font-size-18">Welcome ! </h4>
+                            <h4 class="mb-sm-0 font-size-18">Welcome <?= sessionId('cname'); ?> ! </h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
@@ -27,19 +27,14 @@
                 </div>
                 <!-- end page title -->
                 <div class="row">
-                    <div class="col-xl-12">
+                    <!-- <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header align-items-center d-flex res-flex-column">
                                 <h4 class="card-title mb-0 flex-grow-1"><i class="fas fa-user"></i> Your profile can’t be found by recruiters because it’s missing key information</h4>
-                                <div class="edit_btn">
-
-                                    <a href=""> 3 steps to complete </a>
-                                    <i class="fas fa-angle-right"></i>
-                                </div>
+                                
                             </div>
                         </div>
-                        <!-- end card -->
-                    </div>
+                    </div> -->
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-header align-items-center d-flex bb-0 res-flex-column">
@@ -72,26 +67,17 @@
                         </div>
                         <!-- end card -->
                     </div>
-                    
+
                 </div>
                 <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-header align-items-center d-flex bb-0">
-                                <h4 class="card-title mb-0 flex-grow-1"><b>Recently Applied Jobs</b></h4>
-                            </div><!-- end card header -->
-
-                            <div class="card-body skills-box text-center">
-                                <h4>It appears you haven’t applied to any jobs</h4>
-                                <a href="<?= base_url('candidate/view_jobs') ?>" class="btn  btn-dark  waves-effect waves-light">Browse Jobs</a>
-                            </div>
-                            <!-- end card body -->
-                        </div>
-                        <!-- end card -->
+                    <div class="card-header align-items-center d-flex bb-0">
+                        <h4 class="card-title mb-0 flex-grow-1"><b>Recently Applied Jobs</b></h4>
                     </div>
-                    <!-- end col -->
-                    <!-- end col -->
-                    <!-- end col -->
+                    <div class="card-body skills-box text-center">
+                        <h4>Currenly you haven’t applied to any jobs</h4>
+                        <a href="<?= base_url('candidate/view_jobs') ?>" class="btn  btn-dark  waves-effect waves-light">Browse Jobs</a>
+                    </div>
+
                 </div>
 
             </div>

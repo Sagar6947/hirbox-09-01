@@ -1,4 +1,15 @@
 <?php
+
+
+function job_details($row)
+{
+
+
+
+}
+
+
+
 function job($row, $panel)
 {
     $company = getRowById('tbl_company_registration', 'company_id', $row['company_id']);
@@ -88,5 +99,6 @@ function job($row, $panel)
 
 <?php
 }
+
 
 ?>

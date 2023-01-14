@@ -205,10 +205,9 @@
                                                                     <?php
                                                                     if ($industries) {
                                                                         foreach ($industries as $irow) {
-                                                                            $options = json_decode($candidate_detail[0]['industries'], true);
 
                                                                     ?>
-                                                                            <option value="<?= $irow['cate_id'] ?>" <?= ((in_array($irow['cate_id'], $options)) ? 'selected' : '') ?>>
+                                                                            <option value="<?= $irow['cate_id'] ?>">
                                                                                 <?= $irow['category'] ?>
                                                                             </option>
                                                                     <?php
@@ -236,7 +235,7 @@
 
 
 
-                                                    <div class="row ">
+                                                    <div class="row">
 
 
                                                         <div class="col-lg-8 us">
@@ -356,25 +355,26 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
+</div>
 
-            <div class="rightbar-overlay"></div>
-            <?php include 'includes/footer-link.php'; ?>
+<div class="rightbar-overlay"></div>
+<?php include 'includes/footer-link.php'; ?>
 
-            </body>
+</body>
 
-            </html>
+</html>
+<script>
+    google.maps.event.addDomListener(window, 'load', function() {
+        var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
+        google.maps.event.addListener(places, 'place_changed', function() {
+            var place = places.getPlace();
+            var address = place.formatted_address;
+            var latitude = place.geometry.location.lat();
+            var longitude = place.geometry.location.lng();
 
-
-            <script>
-                google.maps.event.addDomListener(window, 'load', function() {
-                    var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
-                    google.maps.event.addListener(places, 'place_changed', function() {
-                        var place = places.getPlace();
-                        var address = place.formatted_address;
-                        var latitude = place.geometry.location.lat();
-                        var longitude = place.geometry.location.lng();
-
-                    });
-                });
-            </script>
+        });
+    });
+</script>
