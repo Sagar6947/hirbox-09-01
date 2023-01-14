@@ -70,19 +70,18 @@
                                                 </div>
                                             </div>
                                             <div class="job-available row flex-column justify-content-between">
-                                            <div class="flex-shrink-0 text-end">
-                                                <div class="dropdown align-self-start">
-                                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu">
-                                                        <!-- <a class="dropdown-item" href="#">Copy</a> -->
-
-                                                        <a class="dropdown-item" href="<?= base_url('Admin_Dashboard/view_candidate_profile/' . $row['candidate_id'] . '/' . url_title($row['name'])) ?>"><i class="fa fa-user"></i> &nbsp; View Jobs</a>
-                                                        <a class="dropdown-item text-danger delete" href="<?= base_url('Admin_Dashboard/delete_candidate') ?>?BdID=<?= $row['candidate_id'] ?>"><i class="fa fa-trash"></i> &nbsp; Delete</a>
+                                                <div class="flex-shrink-0 text-end">
+                                                    <div class="dropdown align-self-start">
+                                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="bx bx-dots-vertical-rounded font-size-24 text-dark"></i>
+                                                        </a>
+                                                        <div class="dropdown-menu">
+                                                            <!-- <a class="dropdown-item" href="#">Copy</a> -->
+                                                            <a class="dropdown-item" href="<?= base_url('Admin_Dashboard/view_candidate_profile/' . $row['candidate_id'] . '/' . url_title($row['name'])) ?>"><i class="fa fa-user"></i> &nbsp; View Jobs</a>
+                                                            <a class="dropdown-item text-danger delete" href="<?= base_url('Admin_Dashboard/delete_candidate') ?>?BdID=<?= $row['candidate_id'] ?>"><i class="fa fa-trash"></i> &nbsp; Delete</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                                 <a href="#" class="btn admin_button btn-rounded"><?= (($get_job_num >= 1) ? $get_job_num : 'No') ?> Jobs Available</a>
                                             </div>
                                         </div>

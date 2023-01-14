@@ -36,7 +36,7 @@
                                        
                                     </div>
                                     
-                                    <form class="mt-4 pt-2" action="<?= base_url('recruiter-dashboard') ?>" method="POST">
+                                    <form class="mt-4 pt-2" method="POST">
                                         <div class="form-floating form-floating-custom mb-4">
                                             <input type="number" class="form-control" name="number" id="input-username" placeholder="Enter User Name" value="">
                                             <label for="input-username">Number</label>

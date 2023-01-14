@@ -65,15 +65,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
 
-                                    <!--<div class="form-floating form-floating-custom mb-4 r_ct_wrapper ">-->
-                                    <!--    <input type="tel" class="form-control tel_input" name="number" id="input-username" placeholder="Enter Number" maxlength="10" required>-->
-
-                                    <!--    <label for="input-number" class="r_country_num">Number</label>-->
-                                    <!--    <div class="form-floating-icon country_code_wrap">-->
-
-                                    <!--    </div>-->
-                                    <!--</div>-->
                             </div>
 
                             <div class="form-floating form-floating-custom mb-4 auth-pass-inputgroup">

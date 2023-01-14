@@ -10,9 +10,9 @@
     <!-- App favicon -->
 
     <?php include 'includes/headerlink.php'; ?>
-    <script src="https://www.google.com/recaptcha/api.js"></script> 
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 
-   
+
 
 </head>
 
@@ -58,15 +58,24 @@
                                             </div>
                                         </div>
 
+
+
+
+
                                         <div class="form-floating form-floating-custom mb-4 col-md-6">
-                                            <input type="email" class="form-control" id="input-email" placeholder="Enter Email" name="email" value="" required>
-                                            <div class="invalid-feedback">
-                                                Please Enter Email
-                                            </div>
-                                            <label for="input-email">Email</label>
-                                            <div class="form-floating-icon">
-                                                <i data-feather="mail"></i>
-                                            </div>
+                                            <select class="form-control" name="country_code" data-trigger id="choices-single-default" placeholder="This is a search placeholder">
+
+                                                <?php
+                                                if (!empty($country_code)) {
+                                                    foreach ($country_code as $crow) {
+                                                ?>
+                                                        <option value="<?= $crow['id'] ?>"><?= $crow['name'] ?> &nbsp; (+<?= $crow['phonecode'] ?>) </option>
+                                                <?php
+                                                    }
+                                                }
+                                                ?>
+                                            </select>
+
                                         </div>
 
                                         <div class="form-floating form-floating-custom mb-4 col-md-6">
@@ -77,6 +86,16 @@
                                             <label for="input-number">Phone no</label>
                                             <div class="form-floating-icon">
                                                 <i data-feather="phone"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-floating form-floating-custom mb-4 col-md-6">
+                                            <input type="email" class="form-control" id="input-email" placeholder="Enter Email" name="email" value="" required>
+                                            <div class="invalid-feedback">
+                                                Please Enter Email
+                                            </div>
+                                            <label for="input-email">Email</label>
+                                            <div class="form-floating-icon">
+                                                <i data-feather="mail"></i>
                                             </div>
                                         </div>
 
@@ -226,8 +245,8 @@
                                                 <option value="14">Data Entry</option>
                                             </select>
                                         </div>
-                                        
-                                        
+
+
                                         <div class="form-floating form-floating-custom mb-4 col-md-6">
                                             <input type="password" class="form-control" id="input-username" placeholder="Enter Recruiter Name" name="password" value="" required>
                                             <div class="invalid-feedback">
@@ -248,11 +267,11 @@
                                                 <i data-feather="lock"></i>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="mb-4">
-                                                <p class="mb-0">By sigining you agree to the  <a href="#" class="text-primary">Terms of Use</a> and <a href="#" class="text-primary">Privacy Policy</a></p>
+                                            <p class="mb-0">By sigining you agree to the <a href="#" class="text-primary">Terms of Use</a> and <a href="#" class="text-primary">Privacy Policy</a></p>
                                         </div>
-                                        
+
                                         <div class="mb-3">
                                             <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Register</button>
                                         </div>
